@@ -22,13 +22,14 @@ $resultado = $conexao->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fila de Músicas</title>
+    <link rel="stylesheet" href="../front-end/css/style.css">
 </head>
 
 <body>
 
     <h1>Fila de Músicas</h1>
 
-    <a href="back-end/cadastrar.php">Cadastrar música</a>
+    <a href="cadastrar.php">Cadastrar música</a>
     <form method="GET">
 
     <input type="text" name="busca">
@@ -49,7 +50,7 @@ $resultado = $conexao->query($sql);
 
     <?php while ($pedido = $resultado->fetch_assoc()) { ?>
 
-        <div>
+        <div class = "card">
             <h2><?php echo $pedido["musica"]; ?></h2>
 
             <p>Artista: <?php echo $pedido["artista"]; ?></p>
@@ -58,15 +59,15 @@ $resultado = $conexao->query($sql);
 
             <p>Prioridade: <?php echo $pedido["prioridade"]; ?></p>
 
-            <a href="back-end/visualizar.php?id=<?php echo $pedido["id"]; ?>">
+            <a href="visualizar.php?id=<?php echo $pedido["id"]; ?>">
                 Visualizar
             </a>
 
-            <a href="back-end/editar.php?id=<?php echo $pedido["id"]; ?>">
+            <a href="editar.php?id=<?php echo $pedido["id"]; ?>">
                 Editar
             </a>
 
-            <a href="back-end/excluir.php?id=<?php echo $pedido["id"]; ?>">
+            <a href="excluir.php?id=<?php echo $pedido["id"]; ?>">
                 Excluir
             </a>
         </div>
