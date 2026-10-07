@@ -1,0 +1,11 @@
+CREATE DATABASE trabalhoFINAL3C;
+
+USE trabalhoFINAL3C;
+
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    musica VARCHAR(150) NOT NULL,
+    artista VARCHAR(150) NOT NULL,
+    solicitante VARCHAR(100) NOT NULL,
+    prioridade VARCHAR(20) NOT NULL
+);
