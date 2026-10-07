@@ -32,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Música</title>
+    <link rel="stylesheet" href="../front-end/css/style.css">
 </head>
 
 <body>
@@ -74,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <br>
 
-    <a href="index.php">Voltar para a fila</a>
+    <a href="back-end/index.php">Voltar para a fila</a>
 
 </body>
 </html>
