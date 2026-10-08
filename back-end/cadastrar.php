@@ -40,42 +40,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Cadastrar Música</h1>
 
     <?php if (isset($mensagem)) { ?>
-        <p><?php echo $mensagem; ?></p>
+    <p class="mensagem"><?php echo $mensagem; ?></p>
     <?php } ?>
 
-    <form method="POST">
+    <form method="POST" class="formulario">
 
-        <label for="musica">Nome da música:</label>
-        <input type="text" id="musica" name="musica">
+    <label for="musica">Nome da música:</label>
+    <input type="text" id="musica" name="musica" required>
 
-        <br><br>
+    <label for="artista">Artista:</label>
+    <input type="text" id="artista" name="artista"required>
 
-        <label for="artista">Artista:</label>
-        <input type="text" id="artista" name="artista">
+    <label for="solicitante">Quem pediu:</label>
+    <input type="text" id="solicitante" name="solicitante"required>
 
-        <br><br>
+    <label for="prioridade">Prioridade:</label>
+    <select id="prioridade" name="prioridade">
+        <option value="Baixa">Baixa</option>
+        <option value="Normal" selected>Normal</option>
+        <option value="Alta">Alta</option>
+    </select>
 
-        <label for="solicitante">Quem pediu:</label>
-        <input type="text" id="solicitante" name="solicitante">
+    <button type="submit" class="botao-principal">
+        Cadastrar música
+    </button>
 
-        <br><br>
-
-        <label for="prioridade">Prioridade:</label>
-        <select id="prioridade" name="prioridade">
-            <option value="Baixa">Baixa</option>
-            <option value="Normal" selected>Normal</option>
-            <option value="Alta">Alta</option>
-        </select>
-
-        <br><br>
-
-        <button type="submit">Cadastrar música</button>
-
-    </form>
+</form>
 
     <br>
 
-    <a href="back-end/index.php">Voltar para a fila</a>
+    <a href="index.php" class="botao-voltar"> Voltar para a fila</a>
 
 </body>
 </html>

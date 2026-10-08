@@ -2,47 +2,109 @@ body {
     background-color: #121212;
     color: white;
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
     max-width: 1000px;
     margin: auto;
+    padding: 30px;
 }
+
 h1 {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
+
 a {
     color: white;
     text-decoration: none;
 }
-form {
-    display: flex;
-    gap: 10px;
-    margin: 20px 0;
-}
-input,select {
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
-}
+
 button {
     padding: 10px 15px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
 }
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* CABEÇALHO */
+
+.subtitulo {
+    text-align: center;
+    color: #aaa;
+    margin-top: 0;
+}
+
+.contador {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+/* BOTÃO CADASTRAR */
+
+.botao-cadastrar {
+    display: inline-block;
+    background-color: #1db954;
+    padding: 12px 18px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.botao-cadastrar:hover {
+    background-color: #1ed760;
+}
+
+/* FILTROS */
+
+.filtros {
+    display: flex;
+    gap: 10px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+    align-items: center;
+}
+
+.filtros input {
+    flex: 1;
+}
+
+input,
+select {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    box-sizing: border-box;
+}
+
+.filtros a {
+    padding: 10px;
+}
+
+/* CARDS */
+
 .card {
     background-color: #1e1e1e;
     padding: 20px;
     margin: 20px 0;
     border-radius: 10px;
+    border-left: 4px solid #1db954;
 }
+
 .card h2 {
     margin-top: 0;
+    margin-bottom: 15px;
 }
+
 .card p {
     margin: 8px 0;
+    color: #ccc;
 }
+
 .card a {
     display: inline-block;
     padding: 8px 12px;
@@ -50,26 +112,165 @@ button {
     margin-right: 5px;
     border-radius: 6px;
     background-color: #333;
+    transition: 0.2s;
 }
+
 .card a:hover {
+    background-color: #1db954;
+}
+
+/* PRIORIDADE */
+
+.prioridade {
+    font-weight: bold;
+}
+
+.prioridade.alta {
+    color: #ef4444;
+}
+
+.prioridade.normal {
+    color: #facc15;
+}
+
+.prioridade.baixa {
+    color: #22c55e;
+}
+
+/* BOTÃO EXCLUIR */
+
+.botao-excluir {
+    background-color: #b91c1c !important;
+}
+
+.botao-excluir:hover {
+    background-color: #ef4444 !important;
+}
+
+/* FORMULÁRIOS */
+
+.formulario {
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario select {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.botao-principal {
+    background-color: #1db954;
+    color: white;
+    font-weight: bold;
+}
+
+.botao-principal:hover {
+    background-color: #1ed760;
+}
+
+.botao-perigo {
+    background-color: #b91c1c;
+    color: white;
+    font-weight: bold;
+}
+
+.botao-perigo:hover {
+    background-color: #ef4444;
+}
+
+/* MENSAGENS */
+
+.mensagem {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* NENHUM RESULTADO */
+
+.vazio {
+    background-color: #1e1e1e;
+    padding: 40px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.vazio h2 {
+    margin-top: 0;
+}
+
+.vazio p {
+    color: #aaa;
+}
+
+/* VOLTAR */
+
+.botao-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    border-radius: 8px;
+}
+
+.botao-voltar:hover {
     background-color: #555;
 }
+
+/* LINHA */
+
 hr {
     border: none;
     border-top: 1px solid #333;
 }
-button:hover {
-    opacity: 0.8;
-}
+
+/* CELULAR */
+
 @media (max-width: 600px) {
-    form {
+
+    body {
+        padding: 15px;
+    }
+
+    .filtros {
         flex-direction: column;
     }
 
-    input,
-    select,
-    button {
+    .filtros input,
+    .filtros select,
+    .filtros button,
+    .filtros a {
         width: 100%;
         box-sizing: border-box;
+        text-align: center;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card a {
+        display: block;
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .botao-cadastrar {
+        display: block;
+        text-align: center;
     }
 }

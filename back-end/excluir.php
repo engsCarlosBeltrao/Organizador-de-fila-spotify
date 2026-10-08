@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Pedido</title>
+    <link rel="stylesheet" href="../front-end/css/style.css">
 </head>
 
 <body>
@@ -46,13 +47,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </p>
 
     <?php if (isset($mensagem)) { ?>
-        <p><?php echo $mensagem; ?></p>
+    <p class="mensagem"><?php echo $mensagem; ?></p>
     <?php } ?>
 
-    <form method="POST">
+    <form method="POST" class = "formulario">
 
-        <button type="submit">
-            Sim, excluir
+       <button type="submit" class="botao-perigo">
+        Sim, excluir
         </button>
 
         <a href="index.php">

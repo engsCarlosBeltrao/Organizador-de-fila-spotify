@@ -51,17 +51,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Pedido</title>
+    <link rel="stylesheet" href="../front-end/css/style.css">
 </head>
 
 <body>
 
     <h1>Editar Pedido</h1>
 
-    <?php if (isset($mensagem)) { ?>
-        <p><?php echo $mensagem; ?></p>
+   <?php if (isset($mensagem)) { ?>
+    <p class="mensagem"><?php echo $mensagem; ?></p>
     <?php } ?>
 
-    <form method="POST">
+    <form method="POST" class = "formulario">
 
         <label for="musica">Nome da música:</label>
         <input
@@ -113,13 +114,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <br><br>
 
-        <button type="submit">Salvar alterações</button>
+        <button type="submit" class="botao-principal">
+        Salvar alterações
+        </button>
 
     </form>
 
     <br>
 
-    <a href="index.php">Voltar para a fila</a>
+    <a href="index.php" class="botao-voltar"> Voltar para a fila</a>
 
 </body>
 
