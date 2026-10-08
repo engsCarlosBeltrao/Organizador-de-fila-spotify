@@ -27,8 +27,11 @@ $total = $resultado->num_rows;
 </head>
 
 <body>
+    <header class="cabecalho">
+    <img src="../img/banner.png" alt="Beltrao Organizador de Fila">
+    </header>
 
-    <h1>🎵 Fila de Músicas</h1>
+    
 
     <p class="subtitulo">Organizador de pedidos do Spotify</p>
     <p class="contador">

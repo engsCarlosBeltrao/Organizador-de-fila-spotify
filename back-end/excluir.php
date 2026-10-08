@@ -38,7 +38,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+    <header class="cabecalho">
+    <img src="../img/banner.png" alt="Beltrao Organizador de Fila">
+    </header>
     <h1>Excluir Pedido</h1>
 
     <p>

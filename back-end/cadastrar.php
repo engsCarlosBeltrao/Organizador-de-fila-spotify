@@ -8,13 +8,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $artista = $_POST["artista"];
     $solicitante = $_POST["solicitante"];
     $prioridade = $_POST["prioridade"];
+    $youtube = $_POST["youtube"] ?? "";
 
     if (empty($musica) || empty($artista) || empty($solicitante)) {
+
         $mensagem = "Preencha todos os campos obrigatórios.";
+
     } else {
 
-        $sql = "INSERT INTO pedidos (musica, artista, solicitante, prioridade)
-                VALUES ('$musica', '$artista', '$solicitante', '$prioridade')";
+        $sql = "INSERT INTO pedidos 
+                (musica, artista, solicitante, prioridade, youtube)
+                VALUES 
+                ('$musica', '$artista', '$solicitante', '$prioridade', '$youtube')";
 
         if ($conexao->query($sql)) {
             $mensagem = "Música cadastrada com sucesso!";
@@ -28,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,36 +46,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Cadastrar Música</h1>
 
     <?php if (isset($mensagem)) { ?>
-    <p class="mensagem"><?php echo $mensagem; ?></p>
+        <p class="mensagem"><?php echo $mensagem; ?></p>
     <?php } ?>
 
     <form method="POST" class="formulario">
 
-    <label for="musica">Nome da música:</label>
-    <input type="text" id="musica" name="musica" required>
+        <label for="musica">Nome da música:</label>
+        <input type="text" id="musica" name="musica" required>
 
-    <label for="artista">Artista:</label>
-    <input type="text" id="artista" name="artista"required>
+        <label for="artista">Artista:</label>
+        <input type="text" id="artista" name="artista" required>
 
-    <label for="solicitante">Quem pediu:</label>
-    <input type="text" id="solicitante" name="solicitante"required>
+        <label for="solicitante">Quem pediu:</label>
+        <input type="text" id="solicitante" name="solicitante" required>
 
-    <label for="prioridade">Prioridade:</label>
-    <select id="prioridade" name="prioridade">
-        <option value="Baixa">Baixa</option>
-        <option value="Normal" selected>Normal</option>
-        <option value="Alta">Alta</option>
-    </select>
+        <label for="prioridade">Prioridade:</label>
+        <select id="prioridade" name="prioridade">
+            <option value="Baixa">Baixa</option>
+            <option value="Normal" selected>Normal</option>
+            <option value="Alta">Alta</option>
+        </select>
 
-    <button type="submit" class="botao-principal">
-        Cadastrar música
-    </button>
+        <label for="youtube">Link do YouTube (opcional):</label>
+        <input
+            type="url"
+            id="youtube"
+            name="youtube"
+            placeholder="https://www.youtube.com/watch?v=..."
+        >
 
-</form>
+        <button type="submit" class="botao-principal">
+            Cadastrar música
+        </button>
 
-    <br>
+    </form>
 
-    <a href="index.php" class="botao-voltar"> Voltar para a fila</a>
+    <a href="index.php" class="botao-voltar">
+        ← Voltar para a fila
+    </a>
 
 </body>
+
 </html>

@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $artista = $_POST["artista"];
     $solicitante = $_POST["solicitante"];
     $prioridade = $_POST["prioridade"];
+    $youtube = $_POST["youtube"] ?? "";
 
     if (empty($musica) || empty($artista) || empty($solicitante)) {
 
@@ -30,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 musica = '$musica',
                 artista = '$artista',
                 solicitante = '$solicitante',
+                youtube = '$youtube',
                 prioridade = '$prioridade'
                 WHERE id = $id";
 
@@ -55,6 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <header class="cabecalho">
+    <img src="../img/banner.png" alt="Beltrao Organizador de Fila">
+    </header>
 
     <h1>Editar Pedido</h1>
 
@@ -71,7 +76,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             name="musica"
             value="<?php echo $pedido["musica"]; ?>"
         >
+        <label for="youtube">Link do YouTube (opcional):</label>
 
+        <br><br>
+
+        <input
+            type="url"
+            id="youtube"
+            name="youtube"
+            value="<?php echo $pedido["youtube"]; ?>"
+            placeholder="https://www.youtube.com/watch?v=..."
+        >
         <br><br>
 
         <label for="artista">Artista:</label>
